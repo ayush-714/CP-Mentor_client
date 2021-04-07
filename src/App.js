@@ -319,7 +319,7 @@ function App() {
                     setUsername(event.target.value);
                   }}></input>
                       <br /><br />
-                <lable>Password</lable>
+                <lable>Password  </lable>
                 <input type="text"
                   onChange={(event) => {
                     setPassword(event.target.value);
@@ -349,7 +349,7 @@ function App() {
                     setUsername(event.target.value);
                   }}></input>
                       <br /><br />
-                <lable>Password</lable>
+                <lable>Password  </lable>
                 <input type="text"
                   onChange={(event) => {
                     setPassword(event.target.value);

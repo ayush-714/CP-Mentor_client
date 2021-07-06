@@ -10,12 +10,21 @@ import Axios from "axios";
 import { Alert } from 'react-alert'
 import DelayLink from 'react-delay-link';
 import GetallQue from './AllQue'
+import { css } from "@emotion/react";
+import { SpinnerCircular ,SpinnerCircularSplit,SpinnerDiamond,SpinnerCircularFixed} from 'spinners-react';
+import ClipLoader from "react-spinners/ClipLoader";
 import './style.css';
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
 function App() {
 
   const linkof="https://secret-retreat-82606.herokuapp.com/"
   var currentRankkk = 1;
   var [currentRank, setCurrentrank] = useState(1);
+  let [color, setColor] = useState("#ffffff");
   var [currentayu, setCurrentayu] = useState([{
     name: "Pblasdem 1",
     contestid: 1501,
@@ -48,7 +57,7 @@ function App() {
   }
   ]);
   var temp=[];
- 
+ const [loading,setLoading]=useState(false);
   const [totalQue, setTotalque] = useState(0);
   const [currentlevel, setCurrentlevel] = useState(-1);
   const [currentuser, setCurrentuser] = useState("NA");
@@ -143,6 +152,8 @@ function App() {
   // });
   const verifyUser = () => {
     // Updateque();
+    // let [color, setColor] = useState("#ffffff");
+    setLoading(true);
     var found = 0;
     // reqque=
     setTimeout(
@@ -182,7 +193,7 @@ function App() {
                   setCoderatting(temp.data.Ratting);
 
                   // console.log(temp.data);
-                }, 1500);
+                }, 15);
               // },5000)
             }
           }
@@ -191,7 +202,9 @@ function App() {
    
    
     setTimeout(function () {
+      setLoading(false);
       if (found === 1) {
+      
         alert('Login Successful');
         setCurrentuser(username);
 
@@ -201,7 +214,7 @@ function App() {
       else {
         alert('Wrong username or password!!');
       }
-    }, 3500);
+    }, 8000);
 
 
 
@@ -216,7 +229,7 @@ function App() {
 
 
   async function Updateque() {
-    if(currentuser!="NA"){
+    if(currentuser!="NA" && !loading){
     var userquestions = [];
     const user = currentid;
     const userid = currentuser;
@@ -288,7 +301,7 @@ function App() {
         <div className="navbar">
           <Link className="link" to="/home" onClick={Updateque}>Home</Link>
           <Link className="link" to="/">Sign Up</Link>
-          <Link className="link" to="/login">Login</Link>
+          <Link className="link" to="/login" >Login</Link>
           
           <h3 className="h3">CP-Mentor</h3>
         
@@ -351,13 +364,15 @@ function App() {
                   }}></input>
                       <br /><br />
                 <lable>Password</lable>
-                <input type="text"
+                <input type="password"
                   onChange={(event) => {
                     setPassword(event.target.value);
                   }}></input>
                       <br /><br /><br />
                 <button onClick={verifyUser}>Login</button>
-              
+                <br />
+                <br />
+                <SpinnerCircularFixed size="9%" enabled={loading} />
             </div>
             </center>
             </Route>

@@ -11,7 +11,7 @@ import { Alert } from 'react-alert'
 import DelayLink from 'react-delay-link';
 import GetallQue from './AllQue'
 import { css } from "@emotion/react";
-import { SpinnerCircular ,SpinnerCircularSplit,SpinnerDiamond,SpinnerCircularFixed} from 'spinners-react';
+import { SpinnerCircular,SpinnerDotted ,SpinnerCircularSplit,SpinnerDiamond,SpinnerCircularFixed} from 'spinners-react';
 import ClipLoader from "react-spinners/ClipLoader";
 import './style.css';
 const override = css`
@@ -209,7 +209,7 @@ function App() {
       setLoading(false);
       if (found === 1) {
       
-        // alert('Login Successful');
+        alert('Login Successful');
         
         
 
@@ -376,7 +376,7 @@ function App() {
                 <button onClick={verifyUser}>Login</button>
                 <br />
                 <br />
-                <SpinnerCircularFixed size="9%" enabled={loading} />
+                <SpinnerDotted enabled={loading} size={20} thickness={150} speed={126} color="rgba(172, 117, 57, 1)" />
             </div>
             </center>
             </Route>

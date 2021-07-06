@@ -174,6 +174,7 @@ function App() {
               found = 1;
               setCurrentID(users_list[i].Code_Forces);
               setCurrentlevel(users_list[i].Level);
+              setCurrentuser(username);
               // setTimeout(
               //     async function() {
 
@@ -191,22 +192,24 @@ function App() {
                   setCodename(temp.data.Name);
                   setCodeimage(temp.data.Imageurl);
                   setCoderatting(temp.data.Ratting);
-                  setCurrentuser(username);
+                  
                   // console.log(temp.data);
-                }, 15);
+                },500);
                 
               // },5000)
             }
           }
         });
-      }, 2000);
-   
+      }, 15);
+      setTimeout(function () {
+       updateque();
+      },5000);
      
     setTimeout(function () {
       setLoading(false);
       if (found === 1) {
       
-        alert('Login Successful');
+        // alert('Login Successful');
         
         
 
@@ -215,7 +218,7 @@ function App() {
       else {
         alert('Wrong username or password!!');
       }
-    }, 10000);
+    },12000);
 
 
 

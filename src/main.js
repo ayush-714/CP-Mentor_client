@@ -40,7 +40,7 @@ function Home(props) {
   var reqquee=props.quelist;
   const [reqque,setReqquee]= useState(props.quelist);
   useEffect(()=>{
-    console.log("yup",reqque)
+    // console.log("yup",reqque)
 
     setReqquee(reqquee);
   },[props.quelist])
@@ -50,8 +50,13 @@ function Home(props) {
     // <RecentContest user={props.id} />
     return (
       <div>
-       Login To Continue...
-
+        <br />
+        <br />
+        <br />
+       
+        <h3>
+      <p>                                                           Login To Continue...</p>
+        </h3>
       </div>
     );
   }

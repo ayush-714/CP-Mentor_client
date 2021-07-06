@@ -12,7 +12,6 @@ import DelayLink from 'react-delay-link';
 import GetallQue from './AllQue'
 import './style.css';
 function App() {
-
   const linkof="https://secret-retreat-82606.herokuapp.com/"
   var currentRankkk = 1;
   var [currentRank, setCurrentrank] = useState(1);
@@ -53,7 +52,7 @@ function App() {
   const [currentlevel, setCurrentlevel] = useState(-1);
   const [currentuser, setCurrentuser] = useState("NA");
   const [codeimage, setCodeimage] = useState("NA");
-  const [codename, setCodename] = useState("ayu.7");
+  const [codename, setCodename] = useState("NA");
   const [coderatting, setCoderatting] = useState("NA");
   // const [quealllist,setquealllist] = useState([];)
   var users_list = [];
@@ -73,7 +72,7 @@ function App() {
           quealllist.push(temp[i].Que);
         }
     });
-    // console.log("This",quealllist);
+    console.log("This",quealllist);
   },1);
   
 
@@ -137,7 +136,7 @@ function App() {
   
  
   // var quealllist =temp;
-  // console.log(quealllist);
+  console.log(quealllist);
   // useEffect(() => {
   //   console.log(currentid);
   // });
@@ -216,7 +215,7 @@ function App() {
 
 
   async function Updateque() {
-    if(currentuser!="NA"){
+
     var userquestions = [];
     const user = currentid;
     const userid = currentuser;
@@ -272,7 +271,7 @@ function App() {
 
     
     // },3000);
-}
+
 
   }
   
@@ -366,11 +365,11 @@ function App() {
               <Home quelist={currentayu} curr={currentuser} username={codename} imageurl={codeimage} ratting={coderatting} rank={currentRank} total={totalQue} />
               {/* quealllist[currentRank-1] */}
             </Route>
-            {/* <Route exact path="/home2">
+            <Route exact path="/home2">
 
               <Home2 quelist={currentayu} curr={currentuser} username={codename} imageurl={codeimage} ratting={coderatting} rank={currentRank} total={totalQue} />
 
-            </Route> */}
+            </Route>
 
           </div>
 

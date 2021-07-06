@@ -194,27 +194,28 @@ function App() {
 
                   // console.log(temp.data);
                 }, 15);
+                
               // },5000)
             }
           }
         });
-      }, 5);
+      }, 3000);
    
-   
+     
     setTimeout(function () {
       setLoading(false);
       if (found === 1) {
       
         alert('Login Successful');
         setCurrentuser(username);
-
+        
 
 
       }
       else {
         alert('Wrong username or password!!');
       }
-    }, 8000);
+    }, 9000);
 
 
 
@@ -229,7 +230,7 @@ function App() {
 
 
   async function Updateque() {
-    if(currentuser!="NA" && !loading){
+    if(currentuser!="NA"){
     var userquestions = [];
     const user = currentid;
     const userid = currentuser;
@@ -284,7 +285,7 @@ function App() {
 
 
     
-    // },3000);
+    // },4000);
 }
 
   }
@@ -299,7 +300,7 @@ function App() {
     <div className="form">
       <Router>
         <div className="navbar">
-          <Link className="link" to="/home" onClick={Updateque}>Home</Link>
+          <Link className="link" to="/home" onClick={updateque}>Home</Link>
           <Link className="link" to="/">Sign Up</Link>
           <Link className="link" to="/login" >Login</Link>
           

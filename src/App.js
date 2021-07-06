@@ -191,7 +191,7 @@ function App() {
                   setCodename(temp.data.Name);
                   setCodeimage(temp.data.Imageurl);
                   setCoderatting(temp.data.Ratting);
-
+                  setCurrentuser(username);
                   // console.log(temp.data);
                 }, 15);
                 
@@ -199,7 +199,7 @@ function App() {
             }
           }
         });
-      }, 3000);
+      }, 2000);
    
      
     setTimeout(function () {
@@ -207,7 +207,7 @@ function App() {
       if (found === 1) {
       
         alert('Login Successful');
-        setCurrentuser(username);
+        
         
 
 
@@ -215,7 +215,7 @@ function App() {
       else {
         alert('Wrong username or password!!');
       }
-    }, 9000);
+    }, 10000);
 
 
 
@@ -335,7 +335,7 @@ function App() {
                   }}></input>
                       <br /><br />
                 <lable>Password</lable>
-                <input type="text"
+                <input type="password"
                   onChange={(event) => {
                     setPassword(event.target.value);
                   }}></input>

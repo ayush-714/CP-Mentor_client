@@ -1,3 +1,5 @@
+/* colour1= #D6D2C4; */
+
 .Mainpage{
     display: flex;
     margin-top:170px;
@@ -7,7 +9,7 @@
 }
 .conditiontwo{
     background-color: #ddffbc;
-    background-color:#d6e6f2;
+    background-color:#343F56;
     display: flex;
     /* display: flex; */
     
@@ -15,7 +17,7 @@
 
 .conditionone{
     background-color: #ddffbc;
-    background-color:#d6e6f2;
+    background-color:#343F56;
     /* display: flex; */
 
     /* height: 20px; */
@@ -23,16 +25,18 @@
     /* display: flex; */
 }
 .Quelist{
+    color: #D6D2C4;
     border-radius: 25px;
     margin-left: 200px;
-    background-color:#d6e6f2;
+    background-color:#343F56;
     width: 380px;
     height:350px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
 }
 .Userinfo{
-    background-color:#d6e6f2;
+    color: #D6D2C4;
+    background-color:#343F56;
     border-radius: 25px;
     height:350px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -58,6 +62,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   .box2 {
+    
     height: 15px;
     width: 15px;
     margin-top: 23px;
@@ -73,15 +78,16 @@
       width: 30px;
   }
   .Quelist1{
-   
-    background-color:#d6e6f2;
+    color: #D6D2C4;
+    background-color:#343F56;
     width: 280px;
     margin-left: 100px;
     display: flex;
 }
 
 .Ranklist{
-    background-color:#d6e6f2;
+    color: #D6D2C4;
+    background-color:#343F56;
     border-radius: 100px;
     margin-left: 150px;
     width:150px;
@@ -93,7 +99,7 @@
 
 .navbar {
     color:#eeeeee;
-    background-color: 283149;
+    background-color: #0A1D37;
     position: fixed;
     top: 0;
     left: 0;

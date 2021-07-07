@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Axios from "axios";
 import Quelist from "./quelist"
 import './style.css';
+import { SpinnerCircular,SpinnerDotted ,SpinnerCircularSplit,SpinnerDiamond,SpinnerCircularFixed} from 'spinners-react';
 // function sleep(ms) {
 //   return new Promise(resolve => setTimeout(resolve, ms));
 // }
@@ -45,22 +46,50 @@ function Home(props) {
     setReqquee(reqquee);
   },[props.quelist])
   // console.log("this"reqque);
-  
-  if (props.curr === 'NA') {
+  console.log(props.curr);
+  console.log(props.done);
+  console.log(reqque);
+  if (props.curr === 'NA' ) {
     // <RecentContest user={props.id} />
-    return (
+    return(
       <div>
         <br />
-        <br />
-        <br />
-       
-        <h3>
-      <p>                                                           Login To Continue...</p>
-        </h3>
-      </div>
-    );
+      <br />
+      <br />
+      <br />
+      <br />
+      <center>
+      <h1>
+   Login to continue..
+    <br />
+      
+    {/* <SpinnerCircular size={50} thickness={180} speed={100} color="rgba(0, 0, 0, 1)" secondaryColor="rgba(172, 72, 57, 0.02)" /> */}
+    </h1>
+    </center>
+    </div>
+    )
   }
   else {
+    
+    if( reqque === undefined || !props.done){
+      return(
+        <div>
+          <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <center>
+        <h1>
+      Please Wait
+      <br />
+        
+      <SpinnerCircular size={50} thickness={180} speed={100} color="rgba(0, 0, 0, 1)" secondaryColor="rgba(172, 72, 57, 0.02)" />
+      </h1>
+      </center>
+      </div>
+      )
+    }else{
 
     const fun =  async() => {
         for(var i=0;i<reqque.length;i++){
@@ -70,13 +99,7 @@ function Home(props) {
           );
         }
     }
-    var num=100000000;
-    const sleep = async() => {
-      setTimeout(() => {
-        console.log("Sleeping");
-
-      },2000)
-    }
+    
     return(
       <div className="mainpage">
         <br />
@@ -128,7 +151,7 @@ function Home(props) {
     )
  
   }
-
+}
 }
 function Home2(props) {
  return (

@@ -57,7 +57,8 @@ function App() {
   }
   ]);
   var temp=[];
- const [loading,setLoading]=useState(false);
+  const [loading,setLoading]=useState(false);
+  const [DoneQue,setDoneque]=useState(false);
   const [totalQue, setTotalque] = useState(0);
   const [currentlevel, setCurrentlevel] = useState(-1);
   const [currentuser, setCurrentuser] = useState("NA");
@@ -70,22 +71,26 @@ function App() {
   const [codeforcesid, setCodeforcesid] = useState("");
   const [username, setUsername] = useState(0);
   const [password, setPassword] = useState("");
-  var quealllist=[];
+  var allquelllist=[];
+  var [quealllist, setQuealllist]  = useState([]);
+  // var quealllist=[];
   const urlq="https://secret-retreat-82606.herokuapp.com/getall";
+  // var quealllist=[];
 
-
-
+  const findAll = () => {
   setTimeout(async function(){
     await Axios.get("https://powerful-citadel-42239.herokuapp.com/getall").then((response) => {
         var temp=response.data;
         for(var i=0;i<temp.length;i++){
-          quealllist.push(temp[i].Que);
+          allquelllist.push(temp[i].Que);
         }
+        setQuealllist(allquelllist);
+        console.log("quealllist1 " + quealllist[0]);
     });
-    // console.log("This",quealllist);
+    
   },1);
-  
-
+}
+ 
 
 
 
@@ -151,6 +156,8 @@ function App() {
   //   console.log(currentid);
   // });
   const verifyUser = () => {
+    console.log("quealllist1 " + quealllist[0]);
+    // findAll();
     // Updateque();
     // let [color, setColor] = useState("#ffffff");
     setLoading(true);
@@ -174,7 +181,7 @@ function App() {
               found = 1;
               setCurrentID(users_list[i].Code_Forces);
               setCurrentlevel(users_list[i].Level);
-              setCurrentuser(username);
+              // setCurrentuser(username);
               // setTimeout(
               //     async function() {
 
@@ -192,25 +199,30 @@ function App() {
                   setCodename(temp.data.Name);
                   setCodeimage(temp.data.Imageurl);
                   setCoderatting(temp.data.Ratting);
-                  
+                  console.log("quealllist1 " + quealllist[0]);
                   // console.log(temp.data);
-                },500);
+                },15);
                 
               // },5000)
             }
           }
         });
       }, 15);
-      setTimeout(function () {
-       updateque();
-      },5000);
-     
+      // setTimeout(function () {
+      //  Updateque();
+      //  console.log("Running---");
+      // },3000);
+      // setTimeout(function () {
+      //   Updateque();
+      // },5000);
+      
     setTimeout(function () {
+      console.log("quealllist1 " + quealllist[0]);
       setLoading(false);
       if (found === 1) {
-      
+        setCurrentuser(username);
         alert('Login Successful');
-        
+        // Updateque();
         
 
 
@@ -218,7 +230,7 @@ function App() {
       else {
         alert('Wrong username or password!!');
       }
-    },12000);
+    },2000);
 
 
 
@@ -233,7 +245,9 @@ function App() {
 
 
   async function Updateque() {
+   console.log("quealllist1 " + quealllist[0]);
     if(currentuser!="NA"){
+      console.log("quealllist1 " + quealllist[0]);
     var userquestions = [];
     const user = currentid;
     const userid = currentuser;
@@ -244,10 +258,12 @@ function App() {
     // .then((response) => {
 
 
-
+      console.log("quealllist1 " + quealllist[0]);
     // });
     const frust = 0;
-    // setTimeout( function(){
+    setTimeout( function(){
+      console.log("response: " + response.data);
+      console.log("quealllist " + quealllist[0]);
     for (let i = 0; i < response.data.result.length; i++) {
       if (response.data.result[i].verdict === "OK") {
         userquestions.push({
@@ -282,22 +298,29 @@ function App() {
      
 
       setCurrentrank(currentRankkk);
+      console.log("List"+quealllist[currentRankkk - 1]);
       setCurrentayu(quealllist[currentRankkk - 1]);
+      setDoneque(true);
     }
     // if(currentRankkk==3)
 
 
     
-    // },4000);
+    },4000);
 }
 
   }
   
-  useEffect(() => {
-    // Updateque();
-  }, currentRankkk);
+  // useEffect(() => {
+  //   // Updateque();
+  // }, currentRankkk);
+  // useEffect(() => {
+  //   // updateque();
+    
 
+  // }, currentuser);
 
+  // onClick={updateque}
   return (
 
     <div className="form">
@@ -305,7 +328,7 @@ function App() {
         <div className="navbar">
           <Link className="link" to="/home" onClick={updateque}>Home</Link>
           <Link className="link" to="/">Sign Up</Link>
-          <Link className="link" to="/login" >Login</Link>
+          <Link className="link" to="/login" onClick={findAll} >Login</Link>
           
           <h3 className="h3">CP-Mentor</h3>
         
@@ -382,13 +405,11 @@ function App() {
             </Route>
             <Route exact path="/home">
               {/* <h1>Loading...</h1> */}
-              <Home quelist={currentayu} curr={currentuser} username={codename} imageurl={codeimage} ratting={coderatting} rank={currentRank} total={totalQue} />
+              <Home quelist={currentayu} done={DoneQue} curr={currentuser} username={codename} imageurl={codeimage} ratting={coderatting} rank={currentRank} total={totalQue} />
               {/* quealllist[currentRank-1] */}
             </Route>
             {/* <Route exact path="/home2">
-
               <Home2 quelist={currentayu} curr={currentuser} username={codename} imageurl={codeimage} ratting={coderatting} rank={currentRank} total={totalQue} />
-
             </Route> */}
 
           </div>

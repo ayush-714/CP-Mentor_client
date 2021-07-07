@@ -350,13 +350,13 @@ function App() {
                 </h2>
                 <br />
                 <lable>CodeForces ID</lable>
-                <input className="input" type="text"
+                <input className="input" placeholder="ayu.7" type="text"
                   onChange={(event) => {
                     setCodeforcesid(event.target.value);
                   }}></input>
                   <br /><br />
                 <lable>Username</lable>
-                <input className="input" type="text"
+                <input className="input"  type="text"
                   onChange={(event) => {
                     setUsername(event.target.value);
                   }}></input>

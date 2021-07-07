@@ -1,4 +1,4 @@
-/* colour1= #D6D2C4; */
+/* colour1= #F0F0F0; */
 
 .Mainpage{
     display: flex;
@@ -9,34 +9,41 @@
 }
 .conditiontwo{
     background-color: #ddffbc;
-    background-color:#343F56;
+    background-color:#423F3E;
     display: flex;
     /* display: flex; */
     
 }
 
 .conditionone{
-    background-color: #ddffbc;
-    background-color:#343F56;
+    color:#eeeeee;
+    /* textcolor:#000000;
+ */
+ 
+    /* background-color: #ddffbc;
+    background-color:#423F3E; */
     /* display: flex; */
 
     /* height: 20px; */
     
     /* display: flex; */
 }
+.conditionone:link{
+    color:#000000;
+}
 .Quelist{
-    color: #D6D2C4;
+    color: #F0F0F0;
     border-radius: 25px;
     margin-left: 200px;
-    background-color:#343F56;
+    background-color:#423F3E;
     width: 380px;
     height:350px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
 }
 .Userinfo{
-    color: #D6D2C4;
-    background-color:#343F56;
+    color: #F0F0F0;
+    background-color:#423F3E;
     border-radius: 25px;
     height:350px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -77,17 +84,20 @@
   .check{
       width: 30px;
   }
+  
   .Quelist1{
-    color: #D6D2C4;
-    background-color:#343F56;
+    color: #F0F0F0;
+    background-color:#423F3E;
     width: 280px;
     margin-left: 100px;
     display: flex;
 }
-
+.link {
+    color: #FFF;
+  }
 .Ranklist{
-    color: #D6D2C4;
-    background-color:#343F56;
+    color: #F0F0F0;
+    background-color:#423F3E;
     border-radius: 100px;
     margin-left: 150px;
     width:150px;
@@ -99,7 +109,8 @@
 
 .navbar {
     color:#eeeeee;
-    background-color: #0A1D37;
+    background-color: #1B1A17;
+    font-family: "Lucida Console", "Courier New", monospace;
     position: fixed;
     top: 0;
     left: 0;
@@ -116,21 +127,31 @@
     margin-left: 30px;
 }
 
-
+.input{
+  
+    background-color:#F7FBFC;
+    width:80%;
+}
 
 
 .boxother{
+    padding-top:2px;
+    font-family: "Times New Roman", Times, serif;
+    color:#F0F0F0;
     margin-top: 150px;
-    background-color:eeeeee;
-    width:15%;
+    background-color:#423F3E;
+    width:200px;
     height:340px;
     border-radius: 10px;
 box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;}
 .boxother1{
+    padding-top:1px;
+    font-family: "Times New Roman", Times, serif;
     margin-top: 150px;
-    background-color:eeeeee;
-    width:15%;
-    height:275px;
+    color:#F0F0F0;
+    background-color:#423F3E;
+    width:200px;
+    height:280px;
     border-radius: 10px;
 box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;}
 
@@ -138,4 +159,10 @@ box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 
 
 .h3{
     margin-left: 70%;
+}
+.TopName{
+    font-family: "Lucida Console", "Courier New", monospace;
+    /* padding-top:5px; */
+    margin: 25px;
+      /* margin-top: 150px; */
 }

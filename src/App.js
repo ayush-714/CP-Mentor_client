@@ -306,7 +306,7 @@ function App() {
 
 
     
-    },4000);
+    },3000);
 }
 
   }
@@ -326,9 +326,9 @@ function App() {
     <div className="form">
       <Router>
         <div className="navbar">
-          <Link className="link" to="/home" onClick={updateque}>Home</Link>
-          <Link className="link" to="/">Sign Up</Link>
-          <Link className="link" to="/login" onClick={findAll} >Login</Link>
+          <Link className="link" to="/home" style={{ color: '#DDDDDD', textDecoration: 'none'  } }  onClick={updateque}>Home</Link>
+          <Link className="link" to="/"  style={{ color: '#DDDDDD', textDecoration: 'none'  }}>Sign Up</Link>
+          <Link className="link" to="/login"  style={{ color: '#DDDDDD', textDecoration: 'none'  }} onClick={findAll} >Login</Link>
           
           <h3 className="h3">CP-Mentor</h3>
         
@@ -344,24 +344,25 @@ function App() {
               <form>
 
                 
-                <h2>
-                  Register
+                <h2 className="TopName">
+                 
+                  REGISTER
                 </h2>
                 <br />
                 <lable>CodeForces ID</lable>
-                <input type="text"
+                <input className="input" type="text"
                   onChange={(event) => {
                     setCodeforcesid(event.target.value);
                   }}></input>
                   <br /><br />
                 <lable>Username</lable>
-                <input type="text"
+                <input className="input" type="text"
                   onChange={(event) => {
                     setUsername(event.target.value);
                   }}></input>
                       <br /><br />
                 <lable>Password</lable>
-                <input type="password"
+                <input className="input" type="password"
                   onChange={(event) => {
                     setPassword(event.target.value);
                   }}></input>
@@ -379,27 +380,27 @@ function App() {
              
 
                 
-                <h2>
-                  Login
+                <h2  className="TopName">
+                  LOGIN
                 </h2>
-                <br />
+                
                 
                 <lable>Username</lable>
-                <input type="text"
+                <input className="input" type="text"
                   onChange={(event) => {
                     setUsername(event.target.value);
                   }}></input>
                       <br /><br />
                 <lable>Password</lable>
-                <input type="password"
-                  onChange={(event) => {
+                <input type="password" 
+                 className="input" onChange={(event) => {
                     setPassword(event.target.value);
                   }}></input>
                       <br /><br /><br />
                 <button onClick={verifyUser}>Login</button>
                 <br />
                 <br />
-                <SpinnerDotted enabled={loading} size={20} thickness={150} speed={126} color="rgba(172, 117, 57, 1)" />
+                <SpinnerDotted enabled={loading} size={20} thickness={150} speed={126} color="rgba(200, 200,200, 200)" />
             </div>
             </center>
             </Route>

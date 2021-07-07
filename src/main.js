@@ -83,8 +83,9 @@ function Home(props) {
         <h1>
       Please Wait
       <br />
+      {/* F7FBFC */}
         
-      <SpinnerCircular size={50} thickness={180} speed={100} color="rgba(0, 0, 0, 1)" secondaryColor="rgba(172, 72, 57, 0.02)" />
+      <SpinnerCircular size={50} thickness={180} speed={100} color="rgba(0, 0, 0, 1)" secondaryColor="rgb(247, 251, 252)" />
       </h1>
       </center>
       </div>

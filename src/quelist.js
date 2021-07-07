@@ -11,7 +11,7 @@ function Quelist(props){
         <div className="conditionone">
       
     
-         <a href={url}><h3>{props.que.name}</h3></a>
+         <a href={url} ><h3>{props.que.name}</h3></a>
          
          
         </div>
@@ -21,7 +21,7 @@ function Quelist(props){
             <div className="conditionone">
                 
          
-         <a href={url}><h3>{props.que.name}</h3></a>
+         <a  href={url}><h3>{props.que.name}</h3></a>
          
         
             </div>

@@ -58,6 +58,7 @@ function App() {
   ]);
   var temp=[];
   const [loading,setLoading]=useState(false);
+  const [loading1,setLoading1]=useState(false);
   const [DoneQue,setDoneque]=useState(false);
   const [totalQue, setTotalque] = useState(0);
   const [currentlevel, setCurrentlevel] = useState(-1);
@@ -106,13 +107,13 @@ function App() {
     // console.log(users_list);
   }
   const addUser = () => {
-
-    Axios.post("https://powerful-citadel-42239.herokuapp.com/add", {
+    setLoading1(true);
+    Axios.post("http://localhost:3002/add", {
       user: username,
       cfid: codeforcesid,
       pass: password
     }).then(() => {
-
+        setLoading1(false);
     });
 
   }
@@ -221,7 +222,7 @@ function App() {
       setLoading(false);
       if (found === 1) {
         setCurrentuser(username);
-        alert('Login Successful');
+        // alert('Login Successful');
         // Updateque();
         
 
@@ -368,6 +369,9 @@ function App() {
                   }}></input>
                       <br /><br /><br />
                 <button onClick={addUser}>Sign Up</button>
+                <br />
+                <br />
+                <SpinnerDotted enabled={loading1} size={20} thickness={150} speed={126} color="rgba(200, 200,200, 200)" />
               </form>
             </div>
             </center>

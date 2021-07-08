@@ -20,7 +20,7 @@ function RecentContest(props) {
 function Quelistbox(props){
   console.log("running");
   // console.log(props)
-  if(props.que.done===1)
+  if(props.que.done)
   return (
       <div className="box1">
    

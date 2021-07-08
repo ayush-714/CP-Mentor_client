@@ -108,13 +108,16 @@ function App() {
   }
   const addUser = () => {
     setLoading1(true);
-    Axios.post("http://localhost:3002/add", {
-      user: username,
-      cfid: codeforcesid,
-      pass: password
-    }).then(() => {
-        setLoading1(false);
-    });
+    // setTimeout(function () {
+      Axios.post("https://powerful-citadel-42239.herokuapp.com/add", {
+        user: username,
+        cfid: codeforcesid,
+        pass: password
+      }).then(() => {
+         setLoading1(false);
+      });
+      // },1);
+   
 
   }
   const [finalque, setFinalque] = ([]);

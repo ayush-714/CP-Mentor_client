@@ -71,13 +71,17 @@ function App() {
   const [currentid, setCurrentID] = useState("NA");
   const [codeforcesid, setCodeforcesid] = useState("");
   const [username, setUsername] = useState(0);
+  var updatenames;
+  var updateid;
+  var updatepass;
+
   const [password, setPassword] = useState("");
   var allquelllist=[];
   var [quealllist, setQuealllist]  = useState([]);
   // var quealllist=[];
   const urlq="https://secret-retreat-82606.herokuapp.com/getall";
   // var quealllist=[];
-
+  console.log(loading1);
   const findAll = () => {
   setTimeout(async function(){
     await Axios.get("https://powerful-citadel-42239.herokuapp.com/getall").then((response) => {
@@ -106,17 +110,23 @@ function App() {
     });
     // console.log(users_list);
   }
-  const addUser = () => {
+  const addUser= () => {
     setLoading1(true);
+    console.log("username"+username);
+    // if(username==="")continue;
+    // else username=
+    // updatenames;
     // setTimeout(function () {
+      console.log("Yup");
       Axios.post("https://powerful-citadel-42239.herokuapp.com/add", {
         user: username,
         cfid: codeforcesid,
         pass: password
-      }).then(() => {
-         setLoading1(false);
-      });
-      // },1);
+       
+      })
+      setTimeout(function () {
+        setLoading1(false);
+      },2000);
    
 
   }
@@ -345,7 +355,7 @@ function App() {
 
               <center>
             <div className="boxother">
-              <form>
+           
 
                 
                 <h2 className="TopName">
@@ -375,7 +385,7 @@ function App() {
                 <br />
                 <br />
                 <SpinnerDotted enabled={loading1} size={20} thickness={150} speed={126} color="rgba(200, 200,200, 200)" />
-              </form>
+             
             </div>
             </center>
           </Route>
